@@ -17,19 +17,8 @@ struct FrameworkDetails: View {
     
     var body: some View{
         VStack{
-            HStack{
-                Spacer()
-                Button{
-//                    print("Tapped")
-                    isShowingDetailView = false
-                }label: {
-                    Image(systemName: "xmark")
-                        .foregroundColor(Color(.label)) // Supports light as well dark mode
-                        .imageScale(.large)
-                        .frame(width: 44, height: 44)
-                    
-                }
-            }.padding()
+            XDismissButton(isShowingDetailView: $isShowingDetailView)
+
         
             Spacer()
             FrameworkTitleView(framework: framework)
